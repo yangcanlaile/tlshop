@@ -37,15 +37,6 @@
 * Wukong: 245553999@qq.com 245553999
 
 
-
-
-
-
-#tlshop
-
-简介：tlshop是一套使用Java语言开发的独立分布式网店系统，tlshop致力于为个人或企业提供免费、好用的网店系统系统，该系统采用较为流行的J2EE框架 dubbo+ myBatis+ spring 进行合理的组合开发,欢迎学习和试用。
-
-
 <div>
     				<h4 style="font-weight: 400px;"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;tlshop系统主要特性：</h4>
 					<ul style="margin-left: 0px;-webkit-padding-start: 10px;">
