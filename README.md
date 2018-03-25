@@ -26,14 +26,14 @@
 * 树形表格组件： jquery-treegrid(暂定)
 * 文件上传: uploadify
 
-##演示系统
+### 演示系统
 * 前台: [http://xxxx/shop-web](http://xxx/shop-web)
 * 后台: [http://xxxx/shop-admin](http://xxxx/shop-admin) (admin/123456)
 
-##技术交流
+### 技术交流
 悟空QQ：245553999
 
-###项目贡献者:
+### 项目贡献者:
 * Wukong: 245553999@qq.com 245553999
 
 
