@@ -30,15 +30,12 @@
 * 前台: [http://xxxx/shop-web](http://xxx/shop-web)
 * 后台: [http://xxxx/shop-admin](http://xxxx/shop-admin) (admin/123456)
 
-
 ##技术交流
-QQ：245553999
-####项目贡献者:
-* Dylan: dinguangx@163.com 
+悟空QQ：245553999
+
+###项目贡献者:
 * Wukong: 245553999@qq.com 245553999
 
-####项目捐助者:
-* raysun ￥100.00 2016-01-31
 
 
 
@@ -50,7 +47,7 @@ QQ：245553999
 
 
 <div>
-    				<h4 style="font-weight: 400px;"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;jeeshop系统主要特性：</h4>
+    				<h4 style="font-weight: 400px;"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;tlshop系统主要特性：</h4>
 					<ul style="margin-left: 0px;-webkit-padding-start: 10px;">
 						<li class="jeeshop_item "><span>支持多种前台样式，可以方便的在后台切换。</span></li>
 						<li class="jeeshop_item "><span>支持大部分配置信息后台管理，减少修改配置文件造成的问题和不必要的麻烦。</span></li>
