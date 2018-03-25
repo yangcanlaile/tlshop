@@ -31,10 +31,8 @@
 * 后台: [http://xxxx/shop-admin](http://xxxx/shop-admin) (admin/123456)
 
 ### 技术交流
-悟空QQ：245553999
+悟空QQ：245553999（备注：11）
 
-### 项目贡献者:
-* Wukong: 245553999@qq.com 245553999
 
 
 <div>
