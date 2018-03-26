@@ -1,3 +1,4 @@
+/*
 package start;
 
 import com.google.common.util.concurrent.AbstractIdleService;
@@ -30,9 +31,11 @@ public class OrdersBootstrap extends AbstractIdleService  implements ServletCont
         }
     }
 
-    /**
+    */
+/**
      * Start the service.
-     */
+     *//*
+
     @Override
     protected void startUp() throws Exception {
         LOGGER.info("===================shop-tarde START ....==========================");
@@ -44,17 +47,21 @@ public class OrdersBootstrap extends AbstractIdleService  implements ServletCont
 
     }
 
-    /**
+    */
+/**
      * Stop the service.
-     */
+     *//*
+
     @Override
     protected void shutDown() throws Exception {
         context.stop();
         LOGGER.info("service stopped successfully");
     }
-    /**
+    */
+/**
      * 
-     */
+     *//*
+
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         LOGGER.info("shop-trade service started ");
@@ -75,3 +82,4 @@ public class OrdersBootstrap extends AbstractIdleService  implements ServletCont
      }
     }
 }
+*/

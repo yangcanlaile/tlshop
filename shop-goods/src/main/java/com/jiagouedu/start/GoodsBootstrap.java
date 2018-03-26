@@ -1,3 +1,4 @@
+/*
 package com.jiagouedu.start;
 
 
@@ -32,9 +33,10 @@ public class GoodsBootstrap extends AbstractIdleService implements ServletContex
         }
     }
 
-    /**
+*
      * Start the service.
-     */
+
+
     @Override
     protected void startUp() throws Exception {
         LOGGER.info("===================shop-goods START ....==========================");
@@ -48,17 +50,19 @@ public class GoodsBootstrap extends AbstractIdleService implements ServletContex
 
 
 
-    /**
+*
      * Stop the service.
-     */
+
+
     @Override
     protected void shutDown() throws Exception {
         context.stop();
         LOGGER.info("service stopped successfully");
     }
-    /**
+*
      * 
-     */
+
+
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         LOGGER.info("shop-goods service started ");
@@ -79,3 +83,4 @@ public class GoodsBootstrap extends AbstractIdleService implements ServletContex
      }
     }
 }
+*/
