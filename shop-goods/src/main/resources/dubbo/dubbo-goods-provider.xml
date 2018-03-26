@@ -11,7 +11,9 @@
 
     <!-- front-->
     <dubbo:service retries="0" interface="com.jiagouedu.services.front.product.ProductService" ref="productServiceImpl"  />
-
+    <dubbo:service retries="0" interface="com.jiagouedu.services.front.area.AreaService" ref="areaServiceFront"  />
+    <dubbo:service retries="0" interface="com.jiagouedu.services.front.attribute.AttributeService" ref="attributeServiceFront"  />
+    <dubbo:service retries="0" interface="com.jiagouedu.services.front.navigation.NavigationService" ref="navigationService"  />
 
 
     <!-- manage-->
