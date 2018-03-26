@@ -8,7 +8,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>shop-member</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>shop-member</name>
     <url>http://maven.apache.org</url>
