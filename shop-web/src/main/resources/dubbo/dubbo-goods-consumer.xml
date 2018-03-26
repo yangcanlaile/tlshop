@@ -11,4 +11,9 @@
     <dubbo:reference id="specServiceManage"   interface="com.jiagouedu.services.manage.spec.SpecService" check="false"/>
     <dubbo:reference  id="giftServiceManage"   interface="com.jiagouedu.services.manage.gift.GiftService"  check="false"/>
     <dubbo:reference id="activityServiceManage"   interface="com.jiagouedu.services.manage.activity.ActivityService" />
+
+    <dubbo:reference  interface="com.jiagouedu.services.front.area.AreaService" id="areaServiceFront"  check="false" />
+    <dubbo:reference interface="com.jiagouedu.services.front.attribute.AttributeService" id="attributeServiceFront"  check="false"/>
+    <dubbo:reference  interface="com.jiagouedu.services.front.navigation.NavigationService" id="navigationService"  check="false"/>
+
 </beans>
