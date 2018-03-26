@@ -19,7 +19,7 @@
         <module>shop-member-client</module>
         <module>shop-trade-client</module>
     </modules>
-    <repositories>
+   <!-- <repositories>
         <repository>
             <id>oschina</id>
             <url>http://maven.oschina.net/content/groups/public</url>
@@ -42,7 +42,7 @@
                 <enabled>true</enabled>
             </snapshots>
         </pluginRepository>
-    </pluginRepositories>
+    </pluginRepositories>-->
 
     <build>
         <plugins>
