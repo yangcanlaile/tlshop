@@ -11,6 +11,7 @@ import com.jiagouedu.services.front.news.dao.NewsDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 
@@ -20,7 +21,7 @@ import java.util.List;
 @Service
 public class NewsServiceImpl extends ServersManager<News, NewsDao> implements
         NewsService {
-    @Autowired
+    @Resource(name = "newsDaoFront")
     @Override
     public void setDao(NewsDao newsDao) {
         this.dao = newsDao;

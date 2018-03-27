@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * @author wukong 图灵学院 QQ:245553999
  */
-@Repository
+@Repository("newsDaoFront")
 public class NewsDaoImpl implements NewsDao {
     @Resource
 	private BaseDao dao;
