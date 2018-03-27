@@ -12,7 +12,7 @@ import java.util.List;
 
 
 /**
- * 封装mybatis最基本的数据库操作
+ * 封装mybatis最基本的数据库操作 as
  * @author wukong 图灵学院 QQ:245553999
  *
  */

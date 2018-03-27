@@ -1,6 +1,7 @@
 package com.jiagouedu.core.front;
 
 import com.google.common.collect.Lists;
+
 import com.jiagouedu.core.cache.CacheProvider;
 import com.jiagouedu.core.cache.SimpleCacheProvider;
 import com.jiagouedu.core.listener.SystemListener;
