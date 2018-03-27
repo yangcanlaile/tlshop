@@ -13,8 +13,8 @@
         <module>shop-goods-client</module>
         <module>shop-member-client</module>
         <module>shop-trade-client</module>
-        <module>shop-member</module>
         <module>shop-goods</module>
+        <module>shop-member</module>
         <module>shop-trade</module>
         <module>shop-web</module>
         <module>shop-admin</module>
