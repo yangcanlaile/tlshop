@@ -1,4 +1,4 @@
-/*
+
 package com.jiagouedu.start;
 
 
@@ -10,9 +10,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 
 
-//@WebListener
+@WebListener
 public class GoodsBootstrap extends AbstractIdleService implements ServletContextListener {
 
     private ClassPathXmlApplicationContext context;
@@ -33,8 +34,6 @@ public class GoodsBootstrap extends AbstractIdleService implements ServletContex
         }
     }
 
-*
-     * Start the service.
 
 
     @Override
@@ -50,17 +49,13 @@ public class GoodsBootstrap extends AbstractIdleService implements ServletContex
 
 
 
-*
-     * Stop the service.
-
 
     @Override
     protected void shutDown() throws Exception {
         context.stop();
         LOGGER.info("service stopped successfully");
     }
-*
-     * 
+
 
 
     @Override
@@ -83,4 +78,4 @@ public class GoodsBootstrap extends AbstractIdleService implements ServletContex
      }
     }
 }
-*/
+

@@ -35,7 +35,7 @@
     <!--</mvc:interceptors>-->
     <!-- 配置国际化资源文件 -->
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-        <property name="basename" value="i18n/jeeshop" />
+        <property name="basename" value="i18n/tlshop" />
     </bean>
     <!-- 设置freeMarker配置文件路径 -->
     <bean id="freemarkerConfiguration" class="org.springframework.beans.factory.config.PropertiesFactoryBean">

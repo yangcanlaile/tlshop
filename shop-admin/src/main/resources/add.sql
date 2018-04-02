@@ -1,8 +1,8 @@
-ALTER TABLE `jeeshop`.`t_activity` ADD COLUMN `hasBuyGroupPerson` INT NULL DEFAULT 0  AFTER `tuanPrice` ;
+ALTER TABLE `tlshop`.`t_activity` ADD COLUMN `hasBuyGroupPerson` INT NULL DEFAULT 0  AFTER `tuanPrice` ;
 
-ALTER TABLE `jeeshop`.`t_product` ADD COLUMN `giftID` VARCHAR(45) NULL  AFTER `isTimePromotion` ;
+ALTER TABLE `tlshop`.`t_product` ADD COLUMN `giftID` VARCHAR(45) NULL  AFTER `isTimePromotion` ;
 
-CREATE  TABLE `jeeshop`.`t_gift` (
+CREATE  TABLE `tlshop`.`t_gift` (
 
   `id` INT NOT NULL AUTO_INCREMENT ,
 
@@ -24,10 +24,10 @@ CREATE  TABLE `jeeshop`.`t_gift` (
 
 ENGINE = InnoDB;
 
-ALTER TABLE `jeeshop`.`t_gift` ADD COLUMN `picture` VARCHAR(100) NULL  AFTER `status` ;
+ALTER TABLE `tlshop`.`t_gift` ADD COLUMN `picture` VARCHAR(100) NULL  AFTER `status` ;
 
 
-CREATE  TABLE `jeeshop`.`t_hotQuery` (
+CREATE  TABLE `tlshop`.`t_hotQuery` (
 
   `id` INT NOT NULL AUTO_INCREMENT ,
 
@@ -39,9 +39,9 @@ CREATE  TABLE `jeeshop`.`t_hotQuery` (
 
 ENGINE = InnoDB;
 
-ALTER TABLE `jeeshop`.`t_hotquery` CHANGE COLUMN `key` `key1` VARCHAR(45) CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NOT NULL  ;
+ALTER TABLE `tlshop`.`t_hotquery` CHANGE COLUMN `key` `key1` VARCHAR(45) CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NOT NULL  ;
 
-ALTER TABLE `jeeshop`.`t_orderdetail` ADD COLUMN `giftID` VARCHAR(45) NULL  AFTER `specInfo` ;
+ALTER TABLE `tlshop`.`t_orderdetail` ADD COLUMN `giftID` VARCHAR(45) NULL  AFTER `specInfo` ;
 
 
 

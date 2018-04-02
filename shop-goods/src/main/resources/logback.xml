@@ -3,9 +3,9 @@
 
 	<!-- 文件输出日志(DEBUG) -->
 	<appender name="debug-file" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<File>logs/jeeshop-debug.log</File>
+		<File>logs/tlshop-debug.log</File>
 	    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-	      <fileNamePattern>logs/history/jeeshop-debug-%d{yyyy-MM-dd}.log</fileNamePattern>
+	      <fileNamePattern>logs/history/tlshop-debug-%d{yyyy-MM-dd}.log</fileNamePattern>
 	      <maxHistory>60</maxHistory>
 	    </rollingPolicy>
 		<encoder charset="UTF-8">
@@ -15,14 +15,14 @@
 
 	<!-- 文件输出日志(ERROR) -->
 	<appender name="error-file" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<File>logs/jeeshop-error.log</File>
+		<File>logs/tlshop-error.log</File>
 		<filter class="ch.qos.logback.classic.filter.LevelFilter">
 	      <level>error</level>
 	      <onMatch>ACCEPT</onMatch>
 	      <onMismatch>DENY</onMismatch>
 	    </filter>
 	    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-	      <fileNamePattern>logs/history/jeeshop-error-%d{yyyy-MM}.log</fileNamePattern>
+	      <fileNamePattern>logs/history/tlshop-error-%d{yyyy-MM}.log</fileNamePattern>
 	      <maxHistory>12</maxHistory>
 	    </rollingPolicy>
 		<encoder charset="UTF-8">

@@ -29,7 +29,7 @@ public class MessageLoader {
 
     public synchronized void init(){
         if(resourceBundle == null){
-            resourceBundle = ResourceBundle.getBundle("i18n/jeeshop");
+            resourceBundle = ResourceBundle.getBundle("i18n/tlshop");
         }
     }
 }

@@ -38,17 +38,17 @@
 <div>
     				<h4 style="font-weight: 400px;"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;tlshop系统主要特性：</h4>
 					<ul style="margin-left: 0px;-webkit-padding-start: 10px;">
-						<li class="jeeshop_item "><span>支持多种前台样式，可以方便的在后台切换。</span></li>
-						<li class="jeeshop_item "><span>支持大部分配置信息后台管理，减少修改配置文件造成的问题和不必要的麻烦。</span></li>
-						<li class="jeeshop_item "><span>支持灵活的商品目录管理、商品管理、商品属性、商品参数的管理。</span></li>
-						<li class="jeeshop_item "><span>支持系统文章、公告、活动的发布。格式可为文本、图片、视频等。</span></li>
-						<li class="jeeshop_item "><span>支持管理员对订单的整个生命周期。包括确认订单、发货、签收、归档、取消、修改收货人地址等操作。</span></li>
-						<li class="jeeshop_item "><span>支持会员等级。会员等级包括：普通会员、高级会员、铜牌会员、金牌会员、银牌会员，等五个等级。</span></li>
-						<li class="jeeshop_item "><span>支持支付宝担保交易支付。</span></li>
-						<li class="jeeshop_item "><span>支持本地会员、QQ、新浪微博、支付宝快捷等信任登陆方式。</span></li>
-						<li class="jeeshop_item "><span>支持通过邮箱找回密码功能。</span></li>
-						<li class="jeeshop_item "><span>支持像京东、淘宝那样的左侧吸附功能的商品类目展示方式。</span></li>
-						<li class="jeeshop_item "><span>支持商品收藏、商品到货邮件提醒。</span></li>
+						<li class="tlshop_item "><span>支持多种前台样式，可以方便的在后台切换。</span></li>
+						<li class="tlshop_item "><span>支持大部分配置信息后台管理，减少修改配置文件造成的问题和不必要的麻烦。</span></li>
+						<li class="tlshop_item "><span>支持灵活的商品目录管理、商品管理、商品属性、商品参数的管理。</span></li>
+						<li class="tlshop_item "><span>支持系统文章、公告、活动的发布。格式可为文本、图片、视频等。</span></li>
+						<li class="tlshop_item "><span>支持管理员对订单的整个生命周期。包括确认订单、发货、签收、归档、取消、修改收货人地址等操作。</span></li>
+						<li class="tlshop_item "><span>支持会员等级。会员等级包括：普通会员、高级会员、铜牌会员、金牌会员、银牌会员，等五个等级。</span></li>
+						<li class="tlshop_item "><span>支持支付宝担保交易支付。</span></li>
+						<li class="tlshop_item "><span>支持本地会员、QQ、新浪微博、支付宝快捷等信任登陆方式。</span></li>
+						<li class="tlshop_item "><span>支持通过邮箱找回密码功能。</span></li>
+						<li class="tlshop_item "><span>支持像京东、淘宝那样的左侧吸附功能的商品类目展示方式。</span></li>
+						<li class="tlshop_item "><span>支持商品收藏、商品到货邮件提醒。</span></li>
 					</ul>			
 
 </div>
