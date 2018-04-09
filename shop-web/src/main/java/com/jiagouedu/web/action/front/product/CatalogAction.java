@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller("frontCatalogAction")
 @RequestMapping("/catalog")
-@Deprecated
+//@Deprecated 系统用到了
 public class CatalogAction {
     @RequestMapping("{catalogCode}")
     public String catalog(@PathVariable("catalogCode")String catalogCode){

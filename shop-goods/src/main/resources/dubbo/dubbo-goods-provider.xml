@@ -7,7 +7,7 @@
     <dubbo:application name="shop-goods-service"/>
     <!-- 使用redis中心暴露发现服务地址-->
     <dubbo:registry address="${dubbo.zk.ip}" check="false" id="shop-goods"/>
-    <dubbo:provider timeout="10000" threadpool="fixed" threads="100" accepts="1000"  port="20886"/>
+    <dubbo:provider  timeout="10000" threadpool="fixed" threads="100" accepts="1000"  port="20887"/>
 
     <!-- front-->
     <dubbo:service retries="0" interface="com.jiagouedu.services.front.product.ProductService" ref="productServiceImpl"  />

@@ -657,7 +657,7 @@ public class SystemManager {
     }
 
     public void setActivityMap(Map<String, Activity> activityMap) {
-//        this.activityMap = activityMap;
+        //this.activityMap = activityMap;
         putCacheObject("activityMap", (Serializable)(activityMap));
     }
 
