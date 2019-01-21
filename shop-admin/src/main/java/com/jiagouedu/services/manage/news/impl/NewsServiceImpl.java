@@ -57,4 +57,9 @@ public class NewsServiceImpl extends ServersManager<News, NewsDao> implements
 		return dao.selectCount(news);
 	}
 
+	@Override
+	public List<News> selectNoticeList(News news) {
+		return dao.selectNoticeList(news);
+	}
+
 }

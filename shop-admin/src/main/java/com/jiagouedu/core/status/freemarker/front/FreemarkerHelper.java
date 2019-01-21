@@ -3,10 +3,10 @@ package com.jiagouedu.core.status.freemarker.front;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
-import com.jiagouedu.services.front.news.NewsService;
-import com.jiagouedu.services.front.news.bean.News;
-import com.jiagouedu.services.front.product.ProductService;
-import com.jiagouedu.services.front.product.bean.Product;
+import com.jiagouedu.services.manage.news.NewsService;
+import com.jiagouedu.services.manage.news.bean.News;
+import com.jiagouedu.services.manage.product.FrontProductService;
+import com.jiagouedu.services.manage.product.bean.FrontProduct;
 import com.jiagouedu.web.util.RequestHolder;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -31,7 +31,7 @@ import java.util.Map;
 public class FreemarkerHelper {
 	private static final Logger logger = LoggerFactory.getLogger(FreemarkerHelper.class);
 	@Autowired
-	private ProductService productService;
+	private FrontProductService productService;
 	@Autowired
 	private NewsService newsService;
 	
@@ -41,7 +41,7 @@ public class FreemarkerHelper {
 	public static final String template_newsInfo = "newsInfo.ftl";//文章模板
 	public static final String template_product = "product.ftl";//商品介绍模板
 
-	public void setProductService(ProductService productService) {
+	public void setProductService(FrontProductService productService) {
 		this.productService = productService;
 	}
 
@@ -197,7 +197,7 @@ public class FreemarkerHelper {
 	 * @throws Exception 
 	 */
 	public String products() throws Exception {
-		List<Product> productList = productService.selectListProductHTML(new Product());
+		List<FrontProduct> productList = productService.selectListProductHTML(new FrontProduct());
 		if(productList==null || productList.size()==0){
 			logger.error("productList size = 0");
 			return null;
@@ -207,7 +207,7 @@ public class FreemarkerHelper {
 		
 		HashMap<String, Object> data = new HashMap<String, Object>();
 		for(int i=0;i<productList.size();i++){
-			Product p = productList.get(i);
+			FrontProduct p = productList.get(i);
 			if(StringUtils.isBlank(p.getProductHTML())){
 				continue;
 			}
@@ -240,7 +240,7 @@ public class FreemarkerHelper {
 	 * @throws Exception 
 	 */
 	public String staticProductByID(String id) throws Exception {
-		Product p = productService.selectById(id);
+		FrontProduct p = productService.selectById(id);
 		if(p==null || StringUtils.isBlank(p.getProductHTML())){
 			logger.error("ERROR,not found product by id = " + id);
 			throw new NullPointerException("ERROR,not found product by id = " + id);

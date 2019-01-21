@@ -1,1 +1,0 @@
-package com.jiagouedu.services.front.area;import com.jiagouedu.core.Services;import com.jiagouedu.services.front.area.bean.Area;public interface AreaService extends Services<Area> {}

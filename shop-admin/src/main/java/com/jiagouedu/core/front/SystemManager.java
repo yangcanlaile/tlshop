@@ -5,17 +5,18 @@ import com.google.common.collect.Lists;
 import com.jiagouedu.core.cache.CacheProvider;
 import com.jiagouedu.core.cache.SimpleCacheProvider;
 import com.jiagouedu.core.listener.SystemListener;
-import com.jiagouedu.services.front.advert.bean.Advert;
-import com.jiagouedu.services.front.area.bean.Area;
-import com.jiagouedu.services.front.attribute.bean.Attribute;
-import com.jiagouedu.services.front.catalog.bean.Catalog;
-import com.jiagouedu.services.front.express.bean.Express;
-import com.jiagouedu.services.front.indexImg.bean.IndexImg;
-import com.jiagouedu.services.front.navigation.bean.Navigation;
-import com.jiagouedu.services.front.news.bean.News;
-import com.jiagouedu.services.front.notifytemplate.bean.NotifyTemplate;
-import com.jiagouedu.services.front.product.bean.Product;
-import com.jiagouedu.services.front.product.bean.ProductStockInfo;
+import com.jiagouedu.services.common.Catalog;
+import com.jiagouedu.services.manage.advert.bean.Advert;
+import com.jiagouedu.services.manage.area.bean.Area;
+import com.jiagouedu.services.manage.attribute.bean.Attribute;
+import com.jiagouedu.services.manage.catalog.bean.FrontCatalog;
+import com.jiagouedu.services.manage.express.bean.Express;
+import com.jiagouedu.services.manage.indexImg.bean.IndexImg;
+import com.jiagouedu.services.manage.navigation.bean.Navigation;
+import com.jiagouedu.services.manage.news.bean.News;
+import com.jiagouedu.services.manage.notifytemplate.bean.NotifyTemplate;
+import com.jiagouedu.services.manage.product.bean.FrontProduct;
+import com.jiagouedu.services.manage.product.bean.ProductStockInfo;
 import com.jiagouedu.services.manage.accountrank.bean.AccountRank;
 import com.jiagouedu.services.manage.activity.bean.Activity;
 import com.jiagouedu.services.manage.hotquery.bean.Hotquery;
@@ -201,13 +202,13 @@ public class SystemManager {
 			return null;
 		}
 
-        List<Catalog> catalogs = getCatalogs();
+        List<FrontCatalog> catalogs = getCatalogs();
         if(catalogs ==null || catalogs.size()==0){
 			return null;
 		}
 		
 		List<String> list = new LinkedList<String>();
-		Catalog cataInfo = getCatalogsMap().get(catalogID);
+        FrontCatalog cataInfo = getCatalogsMap().get(catalogID);
 		if(cataInfo.getPid().equals("0")){
 			//主类
 			for(int i=0;i<cataInfo.getChildren().size();i++){
@@ -224,10 +225,10 @@ public class SystemManager {
 	 * 根据商品类目code加载与类目有关联的热门商品列表
 	 * @param catalogCode
 	 */
-	public List<Product> getProductsByCatalogCode(String catalogCode){
+	public List<FrontProduct> getProductsByCatalogCode(String catalogCode){
 		logger.error("getProductsByCatalogCode.catalogCode = " + catalogCode);
 		if(StringUtils.isNotBlank(catalogCode)){
-			Catalog catalog = getCatalogsCodeMap().get(catalogCode);
+            FrontCatalog catalog = getCatalogsCodeMap().get(catalogCode);
 			if(catalog!=null){
 				if(catalog.getHotProducts()==null || catalog.getHotProducts().size()==0){
 					logger.error("catalog.getHotProducts()=0");
@@ -269,11 +270,11 @@ public class SystemManager {
      * 产品目录列表
      * @return
      */
-    public List<Catalog> getCatalogs() {
+    public List<FrontCatalog> getCatalogs() {
         return getCacheObject("catalogs");
     }
 
-    public void setCatalogs(List<Catalog> catalogs) {
+    public void setCatalogs(List<FrontCatalog> catalogs) {
 //        this.catalogs = catalogs;
         putCacheObject("catalogs", (Serializable)(catalogs));
     }
@@ -282,11 +283,11 @@ public class SystemManager {
      * 文章目录列表
      * @return
      */
-    public List<Catalog> getCatalogsArticle() {
+    public List<FrontCatalog> getCatalogsArticle() {
         return getCacheObject("catalogsArticle");
     }
 
-    public void setCatalogsArticle(List<Catalog> catalogsArticle) {
+    public void setCatalogsArticle(List<FrontCatalog> catalogsArticle) {
         putCacheObject("catalogsArticle", (Serializable)catalogsArticle);
     }
 
@@ -375,11 +376,11 @@ public class SystemManager {
      * 热门搜索的商品列表
      * @return
      */
-    public List<Product> getHotSearchProductList() {
+    public List<FrontProduct> getHotSearchProductList() {
         return getCacheObject("hotSearchProductList");
     }
 
-    public void setHotSearchProductList(List<Product> hotSearchProductList) {
+    public void setHotSearchProductList(List<FrontProduct> hotSearchProductList) {
         putCacheObject("hotSearchProductList", (Serializable)(hotSearchProductList));
     }
 
@@ -423,11 +424,11 @@ public class SystemManager {
      * 目录的MAP形式，具有层级关系。key：主类别ID，value：主类别对象，可以通过该对象的getChildren()方法获取该主类别的所有的子类别集合
      * @return
      */
-    public Map<String, Catalog> getCatalogsMap() {
+    public Map<String, FrontCatalog> getCatalogsMap() {
         return getCacheObject("catalogsMap");
     }
 
-    public void setCatalogsMap(Map<String, Catalog> catalogsMap) {
+    public void setCatalogsMap(Map<String, FrontCatalog> catalogsMap) {
         putCacheObject("catalogsMap", (Serializable)catalogsMap);
     }
 
@@ -435,11 +436,11 @@ public class SystemManager {
      * 目录的MAP形式，具有层级关系。key：主类别code，value：主类别对象，可以通过该对象的getChildren()方法获取该主类别的所有的子类别集合
      * @return
      */
-    public Map<String, Catalog> getCatalogsCodeMap() {
+    public Map<String, FrontCatalog> getCatalogsCodeMap() {
         return getCacheObject("catalogsCodeMap");
     }
 
-    public void setCatalogsCodeMap(Map<String, Catalog> catalogsCodeMap) {
+    public void setCatalogsCodeMap(Map<String, FrontCatalog> catalogsCodeMap) {
         putCacheObject("catalogsCodeMap", (Serializable)catalogsCodeMap);
     }
 
@@ -459,11 +460,11 @@ public class SystemManager {
      * 促销的商品 top=10
      * @return
      */
-    public List<List<Product>> getGoodsTopList() {
+    public List<List<FrontProduct>> getGoodsTopList() {
         return getCacheObject("goodsTopList");
     }
 
-    public void setGoodsTopList(List<List<Product>> goodsTopList) {
+    public void setGoodsTopList(List<List<FrontProduct>> goodsTopList) {
         putCacheObject("goodsTopList", (Serializable)(goodsTopList));
     }
 
@@ -483,11 +484,11 @@ public class SystemManager {
      * 热门商品
      * @return
      */
-    public List<Product> getHotProducts() {
+    public List<FrontProduct> getHotProducts() {
         return getCacheObject("hotProducts");
     }
 
-    public void setHotProducts(List<Product> hotProducts) {
+    public void setHotProducts(List<FrontProduct> hotProducts) {
         putCacheObject("hotProducts", (Serializable)(hotProducts));
     }
 
@@ -495,11 +496,11 @@ public class SystemManager {
      * 浏览过的商品历史列表，仅限于当前session中存储
      * @return
      */
-    public List<Product> getHistoryProducts() {
+    public List<FrontProduct> getHistoryProducts() {
         return getCacheObject("historyProducts");
     }
 
-    public void setHistoryProducts(List<Product> historyProducts) {
+    public void setHistoryProducts(List<FrontProduct> historyProducts) {
         putCacheObject("historyProducts", (Serializable)(historyProducts));
     }
 
@@ -507,11 +508,11 @@ public class SystemManager {
      * 新品商品
      * @return
      */
-    public List<Product> getNewProducts() {
+    public List<FrontProduct> getNewProducts() {
         return getCacheObject("newProducts");
     }
 
-    public void setNewProducts(List<Product> newProducts) {
+    public void setNewProducts(List<FrontProduct> newProducts) {
         putCacheObject("newProducts", (Serializable)(newProducts));
     }
 
@@ -519,11 +520,11 @@ public class SystemManager {
      * 特价商品
      * @return
      */
-    public List<Product> getSaleProducts() {
+    public List<FrontProduct> getSaleProducts() {
         return getCacheObject("saleProducts");
     }
 
-    public void setSaleProducts(List<Product> saleProducts) {
+    public void setSaleProducts(List<FrontProduct> saleProducts) {
         putCacheObject("saleProducts", (Serializable)(saleProducts));
     }
 
@@ -637,12 +638,12 @@ public class SystemManager {
      * 加载首页左侧的商品列表，此位置的商品从全局加载
      * @return
      */
-    public List<Product> getIndexLeftProduct() {
+    public List<FrontProduct> getIndexLeftProduct() {
 //        return indexLeftProduct;
         return getCacheObject("indexLeftProduct");
     }
 
-    public void setIndexLeftProduct(List<Product> indexLeftProduct) {
+    public void setIndexLeftProduct(List<FrontProduct> indexLeftProduct) {
 //        this.indexLeftProduct = indexLeftProduct;
         putCacheObject("indexLeftProduct", Lists.newArrayList(indexLeftProduct));
     }
@@ -667,12 +668,12 @@ public class SystemManager {
      * key:【r:减免；d:折扣；s:双倍积分】
      * value:【商品列表ArrayList】
      */
-    public Map<String, List<Product>> getActivityProductMap() {
+    public Map<String, List<FrontProduct>> getActivityProductMap() {
 //        return activityProductMap;
         return getCacheObject("activityProductMap");
     }
 
-    public void setActivityProductMap(Map<String, List<Product>> activityProductMap) {
+    public void setActivityProductMap(Map<String, List<FrontProduct>> activityProductMap) {
 //        this.activityProductMap = activityProductMap;
         putCacheObject("activityProductMap", (Serializable)activityProductMap);
     }
@@ -681,12 +682,12 @@ public class SystemManager {
      * 积分商城商品列表
      * @return
      */
-    public List<Product> getActivityScoreProductList() {
+    public List<FrontProduct> getActivityScoreProductList() {
 //        return activityScoreProductList;
         return getCacheObject("activityScoreProductList");
     }
 
-    public void setActivityScoreProductList(List<Product> activityScoreProductList) {
+    public void setActivityScoreProductList(List<FrontProduct> activityScoreProductList) {
 //        this.activityScoreProductList = activityScoreProductList;
         putCacheObject("activityScoreProductList", (Serializable)(activityScoreProductList));
     }
@@ -695,12 +696,12 @@ public class SystemManager {
      * 团购活动商品列表
      * @return
      */
-    public List<Product> getActivityTuanProductList() {
+    public List<FrontProduct> getActivityTuanProductList() {
 //        return activityTuanProductList;
         return getCacheObject("activityTuanProductList");
     }
 
-    public void setActivityTuanProductList(List<Product> activityTuanProductList) {
+    public void setActivityTuanProductList(List<FrontProduct> activityTuanProductList) {
 //        this.activityTuanProductList = activityTuanProductList;
         putCacheObject("activityTuanProductList", (Serializable)(activityTuanProductList));
     }

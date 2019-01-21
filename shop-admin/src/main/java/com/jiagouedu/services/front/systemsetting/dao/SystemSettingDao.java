@@ -1,1 +1,0 @@
-package com.jiagouedu.services.front.systemsetting.dao;import com.jiagouedu.core.DaoManager;import com.jiagouedu.services.front.systemsetting.bean.SystemSetting;public interface SystemSettingDao extends DaoManager<SystemSetting> {}

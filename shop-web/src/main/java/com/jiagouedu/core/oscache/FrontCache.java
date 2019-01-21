@@ -47,7 +47,6 @@ import com.jiagouedu.services.manage.activity.bean.Activity;
 
 import com.jiagouedu.services.manage.hotquery.HotqueryService;
 import com.jiagouedu.services.manage.hotquery.bean.Hotquery;
-import com.jiagouedu.services.manage.systemsetting.SystemSettingMService;
 import com.jiagouedu.services.manage.systemsetting.bean.SystemSetting;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
@@ -78,7 +77,7 @@ public class FrontCache {
 	private SystemSettingService systemSettingService;
 
 	@Autowired
-	private SystemSettingMService systemSettingMService;
+	private com.jiagouedu.services.manage.systemsetting.SystemSettingService systemSettingMService;
 
     @Autowired
 	private NewsService newsService;

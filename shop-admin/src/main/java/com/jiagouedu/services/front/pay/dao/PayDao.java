@@ -1,1 +1,0 @@
-package com.jiagouedu.services.front.pay.dao;import com.jiagouedu.core.DaoManager;import com.jiagouedu.services.front.pay.bean.Pay;public interface PayDao extends DaoManager<Pay> {}

@@ -1,1 +1,0 @@
-package com.jiagouedu.services.front.advert.dao;import com.jiagouedu.core.DaoManager;import com.jiagouedu.services.front.advert.bean.Advert;public interface AdvertDao extends DaoManager<Advert> {}

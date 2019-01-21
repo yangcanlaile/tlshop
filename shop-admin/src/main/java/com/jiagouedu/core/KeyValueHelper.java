@@ -1,6 +1,6 @@
 package com.jiagouedu.core;
 
-import com.jiagouedu.services.front.keyvalue.bean.Keyvalue;
+import com.jiagouedu.services.manage.keyvalue.bean.Keyvalue;
 import org.apache.commons.lang.StringUtils;
 
 import java.util.*;

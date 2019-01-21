@@ -1,1 +1,0 @@
-package com.jiagouedu.services.front.attribute;import com.jiagouedu.core.Services;import com.jiagouedu.services.front.attribute.bean.Attribute;public interface AttributeService extends Services<Attribute> {}

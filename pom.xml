@@ -18,6 +18,7 @@
         <module>shop-trade</module>
         <module>shop-web</module>
         <module>shop-admin</module>
+        <module>shop-admin-client</module>
     </modules>
    <!-- <repositories>
         <repository>

@@ -130,5 +130,25 @@
 	<update id="manage.news.sync" parameterType="com.jiagouedu.services.manage.news.bean.News">
 		update t_news set status=#{status} where id=#{id}
 	</update>
+
+	<select id="manage.news.selectList" parameterType="com.jiagouedu.services.manage.news.bean.News" resultType="com.jiagouedu.services.manage.news.bean.News">
+		SELECT t.*
+		FROM t_news t
+		where 1=1 and t.status='y'
+		<if test="catalogID!=null and catalogID!=''">
+			and t.catalogID=#{catalogID}
+		</if>
+		<if test="type!=null and type!=''">
+			and t.type=#{type}
+		</if>
+		order by order1
+	</select>
+
+	<select id="manage.news.selectNoticeList" parameterType="com.jiagouedu.services.manage.news.bean.News" resultType="com.jiagouedu.services.manage.news.bean.News">
+		SELECT t.id,t.title
+		FROM t_news t
+		where 1=1 and t.type='notice' and t.status='y' order by id desc
+		limit #{offset},#{pageSize}
+	</select>
 	
 </mapper>  

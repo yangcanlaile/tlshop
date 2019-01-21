@@ -54,4 +54,11 @@
 		SELECT * 
 		FROM t_index_img t order by order1
 	</select>
+
+	<select id="manage.indexImg.selectList" parameterType="com.jiagouedu.services.manage.indexImg.bean.IndexImg" resultType="com.jiagouedu.services.manage.indexImg.bean.IndexImg">
+		SELECT *
+		FROM t_index_img t
+		where 1=1
+		order by order1
+	</select>
 </mapper>  

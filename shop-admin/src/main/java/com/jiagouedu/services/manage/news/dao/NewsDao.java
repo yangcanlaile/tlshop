@@ -31,4 +31,5 @@ public interface NewsDao extends DaoManager<News> {
 
 	int selectCount(News news);
 
+	List<News> selectNoticeList(News news);
 }

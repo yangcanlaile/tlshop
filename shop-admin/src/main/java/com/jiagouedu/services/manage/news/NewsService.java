@@ -22,4 +22,9 @@ public interface NewsService extends Services<News> {
 	public void updateDownOrUp(News news);
 
 	public int selectCount(News news);
+
+	/**
+	 * 查询通知，门户显示
+	 */
+	public List<News> selectNoticeList(News news);
 }

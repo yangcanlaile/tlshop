@@ -1,1 +1,0 @@
-package com.jiagouedu.services.front.questionnaireItem.dao;import com.jiagouedu.core.DaoManager;import com.jiagouedu.services.front.questionnaireItem.bean.QuestionnaireItem;public interface QuestionnaireItemDao extends DaoManager<QuestionnaireItem> {	int uniqeItem(QuestionnaireItem questionnaireItem);}

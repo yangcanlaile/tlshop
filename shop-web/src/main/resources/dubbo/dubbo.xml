@@ -17,5 +17,6 @@
     <import resource="dubbo-trade-consumer.xml" />
     <import resource="dubbo-members-consumer.xml" />
     <import resource="dubbo-goods-consumer.xml" />
+    <import resource="dubbo-admin-consumer.xml" />
 
 </beans>

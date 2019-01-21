@@ -1,1 +1,0 @@
-package com.jiagouedu.services.front.notifytemplate;import com.jiagouedu.core.Services;import com.jiagouedu.services.front.notifytemplate.bean.NotifyTemplate;public interface NotifyTemplateService extends Services<NotifyTemplate> {}

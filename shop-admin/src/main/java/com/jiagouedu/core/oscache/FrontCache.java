@@ -9,35 +9,34 @@ import com.jiagouedu.core.KeyValueHelper;
 import com.jiagouedu.core.front.SystemManager;
 import com.jiagouedu.core.pay.alipay.alipayescow.config.AlipayConfig;
 import com.jiagouedu.core.util.DateTimeUtil;
-import com.jiagouedu.services.front.advert.AdvertService;
-import com.jiagouedu.services.front.advert.bean.Advert;
-import com.jiagouedu.services.front.area.AreaService;
-import com.jiagouedu.services.front.area.bean.Area;
-import com.jiagouedu.services.front.attribute.AttributeService;
-import com.jiagouedu.services.front.attribute.bean.Attribute;
-import com.jiagouedu.services.front.catalog.CatalogService;
-import com.jiagouedu.services.front.catalog.bean.Catalog;
-import com.jiagouedu.services.front.comment.CommentService;
-import com.jiagouedu.services.front.commentype.CommentTypeService;
-import com.jiagouedu.services.front.commentype.bean.CommentType;
-import com.jiagouedu.services.front.express.ExpressService;
-import com.jiagouedu.services.front.express.bean.Express;
-import com.jiagouedu.services.front.indexImg.IndexImgService;
-import com.jiagouedu.services.front.indexImg.bean.IndexImg;
-import com.jiagouedu.services.front.keyvalue.KeyvalueService;
-import com.jiagouedu.services.front.keyvalue.bean.Keyvalue;
-import com.jiagouedu.services.front.navigation.NavigationService;
-import com.jiagouedu.services.front.navigation.bean.Navigation;
-import com.jiagouedu.services.front.news.NewsService;
-import com.jiagouedu.services.front.news.bean.News;
-import com.jiagouedu.services.front.notifytemplate.NotifyTemplateService;
-import com.jiagouedu.services.front.notifytemplate.bean.NotifyTemplate;
-import com.jiagouedu.services.front.order.OrderService;
-import com.jiagouedu.services.front.pay.PayService;
-import com.jiagouedu.services.front.pay.bean.Pay;
-import com.jiagouedu.services.front.product.ProductService;
-import com.jiagouedu.services.front.product.bean.Product;
-import com.jiagouedu.services.front.product.bean.ProductStockInfo;
+import com.jiagouedu.services.common.Catalog;
+import com.jiagouedu.services.manage.advert.AdvertService;
+import com.jiagouedu.services.manage.advert.bean.Advert;
+import com.jiagouedu.services.manage.area.AreaService;
+import com.jiagouedu.services.manage.area.bean.Area;
+import com.jiagouedu.services.manage.attribute.AttributeService;
+import com.jiagouedu.services.manage.attribute.bean.Attribute;
+import com.jiagouedu.services.manage.catalog.FrontCatalogService;
+import com.jiagouedu.services.manage.catalog.bean.FrontCatalog;
+import com.jiagouedu.services.manage.commenttype.CommentTypeService;
+import com.jiagouedu.services.manage.commenttype.bean.CommentType;
+import com.jiagouedu.services.manage.express.ExpressService;
+import com.jiagouedu.services.manage.express.bean.Express;
+import com.jiagouedu.services.manage.indexImg.IndexImgService;
+import com.jiagouedu.services.manage.indexImg.bean.IndexImg;
+import com.jiagouedu.services.manage.keyvalue.KeyvalueService;
+import com.jiagouedu.services.manage.keyvalue.bean.Keyvalue;
+import com.jiagouedu.services.manage.navigation.NavigationService;
+import com.jiagouedu.services.manage.navigation.bean.Navigation;
+import com.jiagouedu.services.manage.news.NewsService;
+import com.jiagouedu.services.manage.news.bean.News;
+import com.jiagouedu.services.manage.notifytemplate.NotifyTemplateService;
+import com.jiagouedu.services.manage.notifytemplate.bean.NotifyTemplate;
+import com.jiagouedu.services.manage.pay.PayService;
+import com.jiagouedu.services.manage.pay.bean.Pay;
+import com.jiagouedu.services.manage.product.FrontProductService;
+import com.jiagouedu.services.manage.product.bean.FrontProduct;
+import com.jiagouedu.services.manage.product.bean.ProductStockInfo;
 import com.jiagouedu.services.manage.accountrank.AccountRankService;
 import com.jiagouedu.services.manage.accountrank.bean.AccountRank;
 import com.jiagouedu.services.manage.activity.ActivityService;
@@ -75,7 +74,7 @@ public class FrontCache {
     @Autowired
 	private NewsService newsService;
     @Autowired
-	private CatalogService catalogService;
+	private FrontCatalogService catalogService;
     @Autowired
 	private IndexImgService indexImgService;
     @Autowired
@@ -94,12 +93,13 @@ public class FrontCache {
 	private AdvertService advertService;
     @Autowired
 	private NotifyTemplateService notifyTemplateService;
-    @Autowired
+
 //	private OssService ossService;
-	private OrderService orderService;
-    @Autowired
-	private CommentService commentService;
-    @Autowired
+	//rivate OrderService orderService;
+    //@Autowired
+	//private CommentService commentService;
+    //@Autowired
+	@Autowired
 	private AccountRankService accountRankService;
     @Autowired
 	private ActivityService activityService;
@@ -110,7 +110,7 @@ public class FrontCache {
 	 * front前台
 	 */
     @Autowired
-	private ProductService productService;
+	private FrontProductService productService;
 
     private static SystemManager systemManager;
 
@@ -143,13 +143,13 @@ public class FrontCache {
 		this.accountRankService = accountRankService;
 	}
 
-	public void setCommentService(CommentService commentService) {
+	/*public void setCommentService(CommentService commentService) {
 		this.commentService = commentService;
-	}
+	}*/
 
-	public void setOrderService(OrderService orderService) {
+	/*public void setOrderService(OrderService orderService) {
 		this.orderService = orderService;
-	}
+	}*/
 
 	public void setNotifyTemplateService(NotifyTemplateService notifyTemplateService) {
 		this.notifyTemplateService = notifyTemplateService;
@@ -192,11 +192,11 @@ public class FrontCache {
 		this.systemSettingService = systemSettingService;
 	}
 
-	public void setCatalogService(CatalogService catalogService) {
+	public void setCatalogService(FrontCatalogService catalogService) {
 		this.catalogService = catalogService;
 	}
 
-	public void setProductService(ProductService productService) {
+	public void setProductService(FrontProductService productService) {
 		this.productService = productService;
 	}
 
@@ -239,7 +239,7 @@ public class FrontCache {
 		 */
 		CommentType commentType = new CommentType();
 		commentType.setStatus(CommentType.commentType_status_y);
-		commentType = commentTypeService.selectOne(commentType);
+		commentType = commentTypeService.selectOneToCache(commentType);
 		String commentTypeCode = commentType.getCode();
         systemManager.setCommentTypeCode(commentTypeCode);
         logger.info("SystemManager.commentTypeCode=" + systemManager.getCommentTypeCode());
@@ -249,7 +249,7 @@ public class FrontCache {
 	 * 加载所有的属性列表
 	 */
 	public void loadAttributeList() {
-		List<Attribute> attrs = attributeService.selectList(new Attribute());
+		List<Attribute> attrs = attributeService.selectListToCache(new Attribute());
 //		SystemManager.attrs = attrs;
         systemManager.setAttrs(attrs);
 
@@ -291,19 +291,20 @@ public class FrontCache {
 	 * 加载文章目录
 	 */
 	public void loadNewCatalogs() {
-		Catalog c = new Catalog();
+		FrontCatalog c = new FrontCatalog();
 		c.setType("a");
 		c.setPid("0");
-		List<Catalog> newCatalogs = catalogService.selectList(c);
-		if(newCatalogs!=null && newCatalogs.size()>0){
-			for(int i=0;i<newCatalogs.size();i++){
-				Catalog item = newCatalogs.get(i);
-
+		List<FrontCatalog> newFrontCatalogs = catalogService.selectList(c);
+		List<Catalog> newCatalogs = new ArrayList<Catalog>();
+		if(newFrontCatalogs!=null && newFrontCatalogs.size()>0){
+			for(int i=0;i<newFrontCatalogs.size();i++){
+				FrontCatalog item = newFrontCatalogs.get(i);
 				//加载此目录下的所有文章列表
 				News news = new News();
 				news.setCatalogID(item.getId());
 				List<News> newsList = newsService.selectList(news);
 				item.setNews(newsList);
+				newCatalogs.add(item);
 			}
 		}
 //		SystemManager.newCatalogs = newCatalogs;
@@ -330,7 +331,7 @@ public class FrontCache {
 	 * @param catalogID
 	 * @return
 	 */
-	public static List<Catalog> loadCatalogChildren(String catalogID) {
+	public static List<FrontCatalog> loadCatalogChildren(String catalogID) {
 		try {
 			logger.info(">>catalogID=" + catalogID);
 			if(StringUtils.isBlank(catalogID)){
@@ -338,7 +339,7 @@ public class FrontCache {
 			}
 
 //			Catalog catalog = SystemManager.catalogsMap.get(catalogID);
-            Catalog catalog = systemManager.getCatalogsMap().get(catalogID);
+			FrontCatalog catalog = systemManager.getCatalogsMap().get(catalogID);
 			if(catalog==null){
 				throw new NullPointerException();
 			}
@@ -365,7 +366,7 @@ public class FrontCache {
 		if(StringUtils.isBlank(catalogID)){
 			throw new NullPointerException();
 		}
-        Map<String, Catalog> catalogsMap = systemManager.getCatalogsMap();
+        Map<String, FrontCatalog> catalogsMap = systemManager.getCatalogsMap();
         Catalog catalog = catalogsMap.get(catalogID);
 		if(catalog==null){
 			throw new NullPointerException();
@@ -432,9 +433,9 @@ public class FrontCache {
 
 //		loadCatalogs2();
 
-		List<Catalog> catalogs = loadCatalogs2("p");
+		List<FrontCatalog> catalogs = loadCatalogs2("p");
         systemManager.setCatalogs(catalogs);
-		List<Catalog> catalogsArticle = loadCatalogs2("a");
+		List<FrontCatalog> catalogsArticle = loadCatalogs2("a");
         systemManager.setCatalogsArticle(catalogsArticle);
 
 //		logger.info("SystemManager.catalogs=" + SystemManager.catalogs.size());
@@ -443,8 +444,8 @@ public class FrontCache {
 //		SystemManager.catalogsMap.clear();
 //		SystemManager.catalogsCodeMap.clear();
 
-        Map<String, Catalog> catalogsMap = Maps.newHashMap();
-        Map<String, Catalog> catalogsCodeMap = Maps.newHashMap();
+        Map<String, FrontCatalog> catalogsMap = Maps.newHashMap();
+        Map<String, FrontCatalog> catalogsCodeMap = Maps.newHashMap();
 		putToMap(systemManager.getCatalogs(), loadProduct, catalogsMap, catalogsCodeMap);
         systemManager.setCatalogsMap(catalogsMap);
         systemManager.setCatalogsCodeMap(catalogsCodeMap);
@@ -455,12 +456,12 @@ public class FrontCache {
 	 * @param catalogs
 	 * @throws Exception
 	 */
-	public void putToMap(List<Catalog> catalogs,boolean loadProduct, Map<String, Catalog> catalogsMap, Map<String, Catalog> catalogsCodeMap) throws Exception{
+	public void putToMap(List<FrontCatalog> catalogs,boolean loadProduct, Map<String, FrontCatalog> catalogsMap, Map<String, FrontCatalog> catalogsCodeMap) throws Exception{
 		if(catalogs==null || catalogs.size()==0){
 			return;
 		}
 		for(int i=0;i<catalogs.size();i++){
-			Catalog item = catalogs.get(i);
+			FrontCatalog item = catalogs.get(i);
 
 			if(loadProduct){
 				//超级菜单里面的推荐商品
@@ -490,7 +491,7 @@ public class FrontCache {
 	 * 加载超级菜单的位置显示的热门推荐商品列表
 	 * @param item
 	 */
-	private void loadsuperMenuProducts(Catalog item){
+	private void loadsuperMenuProducts(FrontCatalog item){
 		if(!item.getPid().equals("0")){
 			//子目录则不加载任何数据
 			return;
@@ -504,10 +505,10 @@ public class FrontCache {
 			ids.add(item.getChildren().get(j).getId());
 		}
 
-		Product product = new Product();
+		FrontProduct product = new FrontProduct();
 		product.setTop(3);//显示的最大个数
 		product.setProductIds(ids);//目录集合
-		List<Product> superMenuProducts = productService.loadHotProductShowInSuperMenu(product);
+		List<FrontProduct> superMenuProducts = productService.loadHotProductShowInSuperMenu(product);
 
 //		if(superMenuProducts==null || superMenuProducts.size()==0){
 //			logger.info("superMenuProducts = 0" + ",catalogCode = " + item.getCode());
@@ -523,12 +524,12 @@ public class FrontCache {
 	 * 加载每个目录下的热门推荐商品列表（包括子目录）
 	 * @param item
 	 */
-	private void loadHotProductByCatalog(Catalog item){
+	private void loadHotProductByCatalog(FrontCatalog item){
 		if(item.getPid().equals("0") && (item.getChildren()==null || item.getChildren().size()==0)){
 			return;
 		}
 
-		Product p = new Product();
+		FrontProduct p = new FrontProduct();
 		p.setTop(FrontContainer.default_page_left_product_size);
 
 		if(item.getPid().equals("0")){
@@ -540,7 +541,7 @@ public class FrontCache {
 		}else{
 			p.setCatalogID(item.getId());
 		}
-		List<Product> hotProducts = productService.selectPageLeftHotProducts(p);
+		List<FrontProduct> hotProducts = productService.selectPageLeftHotProducts(p);
 
 		if(hotProducts==null || hotProducts.size()==0){
 			logger.info("loadHotProductByCatalog.hotProducts = 0" + ",catalogCode = " + item.getCode());
@@ -558,20 +559,20 @@ public class FrontCache {
 	 * 非递归方法查询商品/文章目录结构，并且自动排序。
 	 * @param type
 	 */
-	private List<Catalog> loadCatalogs2(String type){
-        List<Catalog> catalogs = Lists.newLinkedList();
-		Catalog cc = new Catalog();
+	private List<FrontCatalog> loadCatalogs2(String type){
+        List<FrontCatalog> catalogs = Lists.newLinkedList();
+		FrontCatalog cc = new FrontCatalog();
 		cc.setType(type);
-		List<Catalog> catalogsList = catalogService.selectList(cc);
+		List<FrontCatalog> catalogsList = catalogService.selectList(cc);
 		if(catalogsList!=null){
 
-			Map<String, Catalog> map = new HashMap<String, Catalog>();
-			for(Iterator<Catalog> it = catalogsList.iterator();it.hasNext();){
-				Catalog item = it.next();
+			Map<String, FrontCatalog> map = new HashMap<String, FrontCatalog>();
+			for(Iterator<FrontCatalog> it = catalogsList.iterator();it.hasNext();){
+				FrontCatalog item = it.next();
 
 				if(StringUtils.isNotBlank(item.getPid()) && item.getPid().equals("0")){
 					//是否在导航栏显示中文化
-					if(item.getShowInNav().equals(Catalog.catalog_showInNav_y)){
+					if(item.getShowInNav().equals(FrontCatalog.catalog_showInNav_y)){
 						item.setShowInNavStr("是");
 					}
 
@@ -580,14 +581,14 @@ public class FrontCache {
 				}
 			}
 
-			for(Iterator<Catalog> it = catalogsList.iterator();it.hasNext();){
-				Catalog item = it.next();
+			for(Iterator<FrontCatalog> it = catalogsList.iterator();it.hasNext();){
+				FrontCatalog item = it.next();
 				if(StringUtils.isNotBlank(item.getPid())){
 //							list.add(item);
-					Catalog rootItem = map.get(item.getPid());
+					FrontCatalog rootItem = map.get(item.getPid());
 					if(rootItem!=null){
 						if(rootItem.getChildren()==null){
-							rootItem.setChildren(new LinkedList<Catalog>());
+							rootItem.setChildren(new LinkedList<FrontCatalog>());
 						}
 						rootItem.getChildren().add(item);
 					}
@@ -595,7 +596,7 @@ public class FrontCache {
 				}
 			}
 
-			for(Iterator<Entry<String, Catalog>> it = map.entrySet().iterator();it.hasNext();){
+			for(Iterator<Entry<String, FrontCatalog>> it = map.entrySet().iterator();it.hasNext();){
 				catalogs.add(it.next().getValue());
 			}
 
@@ -644,31 +645,31 @@ public class FrontCache {
 	 * 加载促销的商品
 	 */
 	public void selectTopProducts() {
-		Product e = new Product();
+		FrontProduct e = new FrontProduct();
 		e.setStatus(1);
 		e.setTop(8);
 
-		List<Product> result = productService.selectList(e);
+		List<FrontProduct> result = productService.selectList(e);
 		if (result == null || result.size() == 0) {
 			return;
 		}
 
 		System.out.println("result=" + result);
 
-		List<List<Product>> list = new LinkedList<List<Product>>();
+		List<List<FrontProduct>> list = new LinkedList<List<FrontProduct>>();
 		int nn = 0;
 		int maxLen = 4;
 		int i = 0;
-		List<Product> row = new LinkedList<Product>();
-		for (Iterator<Product> it = result.iterator(); it.hasNext();) {
-			Product ee = (Product) it.next();
+		List<FrontProduct> row = new LinkedList<FrontProduct>();
+		for (Iterator<FrontProduct> it = result.iterator(); it.hasNext();) {
+			FrontProduct ee = (FrontProduct) it.next();
 			row.add(ee);
 			nn++;
 			i++;
 			if (nn == maxLen) {
 				list.add(row);
 				nn = 0;
-				row = new LinkedList<Product>();
+				row = new LinkedList<FrontProduct>();
 			}
 
 			if ((result.size() == 1 + i)) {
@@ -719,13 +720,13 @@ public class FrontCache {
 //	}
 
 	// 加载商品
-	private List<Product> loadProducts(int type) {
-		Product p = new Product();
+	private List<FrontProduct> loadProducts(int type) {
+		FrontProduct p = new FrontProduct();
 		p.setTop(8);
 		if (type == 1) {
-			p.setIsnew(Product.Product_isnew_y);//最新
+			p.setIsnew(FrontProduct.Product_isnew_y);//最新
 		} else if (type == 2) {
-			p.setSale(Product.Product_sale_y);//特价
+			p.setSale(FrontProduct.Product_sale_y);//特价
 		} else if (type == 3) {
 			p.setHot(true);//热门
 		}
@@ -752,7 +753,7 @@ public class FrontCache {
 	 * 加载商品内存库存
 	 */
 	public void loadProductStock() {
-		List<ProductStockInfo> list = productService.selectStockList(new Product());
+		List<ProductStockInfo> list = productService.selectStockList(new FrontProduct());
         Map<String, ProductStockInfo> productStockMap = Maps.newHashMap();
         if(list!=null && list.size()>0){
             for(int i=0;i<list.size();i++){
@@ -771,7 +772,7 @@ public class FrontCache {
 			throw new NullPointerException("商品ID不能为空！");
 		}
 
-		Product p = new Product();
+		FrontProduct p = new FrontProduct();
 		p.setId(productID);
 		List<ProductStockInfo> list = productService.selectStockList(p);
 		if(list!=null && list.size()>0){
@@ -987,9 +988,9 @@ public class FrontCache {
 	 * 加载首页左侧的商品列表，此位置的商品从全局加载
 	 */
 	private void loadIndexLeftProduct(){
-		Product p = new Product();
+		FrontProduct p = new FrontProduct();
 		p.setTop(FrontContainer.default_page_left_product_size);
-		List<Product> indexLeftProduct = productService.selectPageLeftHotProducts(p);
+		List<FrontProduct> indexLeftProduct = productService.selectPageLeftHotProducts(p);
         systemManager.setIndexLeftProduct(indexLeftProduct);
 	}
 
@@ -997,18 +998,18 @@ public class FrontCache {
 	 * 加载促销活动的商品
 	 */
 	public void loadActivityProductList(){
-        Map<String, List<Product>> activityProductMap = Maps.newHashMap();
+        Map<String, List<FrontProduct>> activityProductMap = Maps.newHashMap();
         Map<String, Activity> activityMap = systemManager.getActivityMap();
         if(activityMap.size()==0){
 			return;
 		}
-		List<Product> list = productService.selectActivityProductList(null);
+		List<FrontProduct> list = productService.selectActivityProductList(null);
 		if(list==null){
 			logger.info("loadActivityProductList.list=0");
 		}else{
 			logger.info("loadActivityProductList.list="+list.size());
 			for(int i=0;i<list.size();i++){
-				Product p = list.get(i);
+				FrontProduct p = list.get(i);
 				Activity activity = activityMap.get(p.getActivityID());
 				if(activity==null){
 					logger.info(" p = " + p.getId());
@@ -1030,10 +1031,10 @@ public class FrontCache {
 	}
 
 	//根据此商品的优惠类型,进行分组
-	private void addProductByDiscountType(Product p, Activity activity, Map<String, List<Product>> activityProductMap) {
-		List<Product> valueList = activityProductMap.get(activity.getDiscountType());
+	private void addProductByDiscountType(FrontProduct p, Activity activity, Map<String, List<FrontProduct>> activityProductMap) {
+		List<FrontProduct> valueList = activityProductMap.get(activity.getDiscountType());
 		if(valueList == null){
-			valueList = new LinkedList<Product>();
+			valueList = new LinkedList<FrontProduct>();
 			activityProductMap.put(activity.getDiscountType(), valueList);
 		}
 
@@ -1068,14 +1069,14 @@ public class FrontCache {
 			}
 		}
 		logger.info("loadActivityScoreProductList...productIds="+productIds.toString());
-        List<Product> activityScoreProductList = Lists.newArrayList();
+        List<FrontProduct> activityScoreProductList = Lists.newArrayList();
         if(productIds.size()>0){
-			Product queryProduct = new Product();
+			FrontProduct queryProduct = new FrontProduct();
 			queryProduct.setProductIds(productIds);
 			activityScoreProductList = productService.selectActivityProductList(queryProduct);
 			//从活动中拷贝属性过去
 			for(int i=0;i<activityScoreProductList.size();i++){
-				Product p = activityScoreProductList.get(i);
+				FrontProduct p = activityScoreProductList.get(i);
 				Activity activity = activityMap.get(p.getActivityID());
 				if(activity==null){
 					logger.info(" p = " + p.getId());
@@ -1116,15 +1117,15 @@ public class FrontCache {
 			}
 		}
 		logger.info("loadActivityScoreProductList...productIds="+productIds.toString());
-        List<Product> activityTuanProductList = Lists.newArrayList();
+        List<FrontProduct> activityTuanProductList = Lists.newArrayList();
 		if(productIds.size()>0){
-			Product queryProduct = new Product();
+			FrontProduct queryProduct = new FrontProduct();
 			queryProduct.setProductIds(productIds);
 			activityTuanProductList = productService.selectActivityProductList(queryProduct);
 
 			//从活动中拷贝属性过去
 			for(int i=0;i<activityTuanProductList.size();i++){
-				Product p = activityTuanProductList.get(i);
+				FrontProduct p = activityTuanProductList.get(i);
 				Activity activity = activityMap.get(p.getActivityID());
 				if(activity==null){
 					logger.info(" p = " + p.getId());

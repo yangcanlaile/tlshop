@@ -1,1 +1,0 @@
-package com.jiagouedu.services.manage.systemsetting;import com.jiagouedu.core.Services;import com.jiagouedu.services.manage.systemsetting.bean.SystemSetting;public interface SystemSettingService extends Services<SystemSetting> {}

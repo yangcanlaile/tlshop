@@ -1,1 +1,0 @@
-package com.jiagouedu.services.front.orderlog.dao;import com.jiagouedu.core.DaoManager;import com.jiagouedu.services.front.orderlog.bean.Orderlog;public interface OrderlogDao extends DaoManager<Orderlog> {	int selectCount(Orderlog orderlog);}

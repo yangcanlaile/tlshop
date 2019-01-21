@@ -101,4 +101,9 @@ public class NewsDaoImpl implements NewsDao {
 	public int selectCount(News news) {
 		return (Integer) dao.selectOne("manage.news.selectCount",news);
 	}
+
+	@Override
+	public List<News> selectNoticeList(News news) {
+		return dao.selectList("manage.news.selectNoticeList",news);
+	}
 }

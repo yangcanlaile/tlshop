@@ -1,1 +1,0 @@
-package com.jiagouedu.services.front.advert;import com.jiagouedu.core.Services;import com.jiagouedu.services.front.advert.bean.Advert;public interface AdvertService extends Services<Advert> {}
