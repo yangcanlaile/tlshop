@@ -19,6 +19,8 @@
         <module>shop-web</module>
         <module>shop-admin</module>
         <module>shop-admin-client</module>
+        <module>shop-pay</module>
+        <module>shop-pay-client</module>
     </modules>
    <!-- <repositories>
         <repository>
