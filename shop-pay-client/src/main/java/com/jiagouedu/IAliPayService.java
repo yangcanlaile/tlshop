@@ -12,10 +12,12 @@ import java.util.Map;
 public interface IAliPayService {
 
 	/**
-	 * 网站支付
+	 * 支付宝网站支付
 	 * @Author  悟空老师
 	 */
 	String aliPayPc(Product product);
+
+
 
 	/***
 	 * 验证签名 回调

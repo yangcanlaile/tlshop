@@ -6,5 +6,6 @@
 
 
     <dubbo:service retries="0" interface="com.jiagouedu.IAliPayService" ref="aliPayServiceImpl"  />
+    <dubbo:service retries="0" interface="com.jiagouedu.IWeiXinPayService" ref="weixinPayServiceImpl"  />
 
 </beans>

@@ -17,12 +17,15 @@ package com.jiagouedu.web.action.front.paygate;/* ━━━━━━如来保佑
  */
 
 import com.jiagouedu.IAliPayService;
+import com.jiagouedu.IWeiXinPayService;
 import com.jiagouedu.core.front.SystemManager;
 import com.jiagouedu.model.Product;
 import com.jiagouedu.services.front.order.OrderService;
 import com.jiagouedu.services.front.order.bean.Order;
 import com.jiagouedu.services.front.orderpay.OrderpayService;
 import com.jiagouedu.services.front.ordership.OrdershipService;
+import com.jiagouedu.web.util.Constants;
+import com.jiagouedu.web.util.ZxingUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +54,8 @@ public class PayAction {
    private OrderpayService orderpayService;
    @Autowired
    private IAliPayService aliPayService;
+   @Autowired
+   private IWeiXinPayService weixinPayService;
 
 
    @RequestMapping("/pcpay")
@@ -69,6 +74,26 @@ public class PayAction {
       String form  =  aliPayService.aliPayPc(product);
       map.addAttribute("form", form);
       return "paygate/alipay/pay";
+   }
+
+   @RequestMapping("/wxpay")
+   public String wxpay(String orderId, ModelMap map) {
+      logger.info("微信支付");
+      Order order = orderService.selectById(orderId);
+      if(order == null) {
+         throw new NullPointerException("根据订单号查询不到订单信息！");
+      }
+      String imgPath= Constants.QRCODE_PATH+ Constants.SF_FILE_SEPARATOR+order.getId()+".png";
+      Product product=new Product();//支付product
+      product.setProductId(order.getId());
+      product.setSubject(order.getRemark());
+      product.setOutTradeNo(order.getId());
+      product.setBody(order.getRemark());
+      product.setTotalFee(order.getAmount());
+      String urlCode  =  weixinPayService.weixinPay(product);
+      ZxingUtils.getQRCodeImge(urlCode, 256, imgPath);// 生成二维码
+      map.addAttribute("img", "../qrcode/"+order.getId()+".png");
+      return "paygate/weixinpay/pay";
    }
 
    /***

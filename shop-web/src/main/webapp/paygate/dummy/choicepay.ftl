@@ -37,7 +37,7 @@
 <#--<div> <input id="btnPay" type="button" class="btn btn-primary" value="确认支付"/></div>-->
     <div>
         <a href="${basepath}/pay/pcpay?orderId=${order.id!""}"><img src="${basepath}/resource/images/zfbzf.jpg" width="100" height="50"></a>
-        <a href="${basepath}/pay/pcpay?orderId=${order.id!""}"><img src="${basepath}/resource/images/wxzf.jpg" width="100" height="50"></a>
+        <a href="${basepath}/pay/wxpay?orderId=${order.id!""}"><img src="${basepath}/resource/images/wxzf.jpg" width="100" height="50"></a>
     </div>
        <#-- <input id="btnPay" type="button" class="btn btn-primary" value="确认支付"/></div>-->
 </div>

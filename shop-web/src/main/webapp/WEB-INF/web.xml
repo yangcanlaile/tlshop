@@ -99,7 +99,7 @@
     </filter-mapping>
 
 
- <!--   <servlet>
+    <servlet>
         <servlet-name>springdyn</servlet-name>
         <servlet-class>com.gome.spring.compents.servlet.DynServlet
         </servlet-class>
@@ -107,7 +107,7 @@
     <servlet-mapping>
         <servlet-name>springdyn</servlet-name>
         <url-pattern>/dyn/admin/*</url-pattern>
-    </servlet-mapping>-->
+    </servlet-mapping>
 
     <error-page>
         <error-code>404</error-code>
