@@ -137,17 +137,6 @@
             <artifactId>dom4j</artifactId>
             <version>1.6.1</version><!--$NO-MVN-MAN-VER$ -->
         </dependency>
-        <!-- 支付宝 SDK(项目中的支付宝SDk需要自行去官网下载打入本地仓库或者私服) -->
-        <!--		<dependency>
-                    <groupId>com.acts</groupId>
-                    <artifactId>alipay-trade-sdk</artifactId>
-                    <version>1.0.0</version>
-                </dependency>
-                <dependency>
-                    <groupId>com.acts</groupId>
-                    <artifactId>alipay-sdk-java</artifactId>
-                    <version>1.0.0</version>
-                </dependency>-->
         <dependency>
             <groupId>com.alipay</groupId>
             <artifactId>alipay-trade-sdk</artifactId>
