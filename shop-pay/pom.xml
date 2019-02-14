@@ -137,7 +137,7 @@
             <artifactId>dom4j</artifactId>
             <version>1.6.1</version><!--$NO-MVN-MAN-VER$ -->
         </dependency>
-        <dependency>
+    <!--    <dependency>
             <groupId>com.alipay</groupId>
             <artifactId>alipay-trade-sdk</artifactId>
             <version>20161215</version>
@@ -150,6 +150,16 @@
             <version>3.3.0</version>
             <scope>system</scope>
             <systemPath>${basedir}\..\alipay-sdk-java-3.3.0.jar</systemPath>
+        </dependency>-->
+        <dependency>
+            <groupId>com.alipay</groupId>
+            <artifactId>alipay-trade-sdk</artifactId>
+            <version>20161215</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay</groupId>
+            <artifactId>alipay-sdk-java</artifactId>
+            <version>3.3.0</version>
         </dependency>
         <!-- 银联使用bcprov-jdk16 -->
         <dependency>
