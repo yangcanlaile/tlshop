@@ -22,6 +22,8 @@ public class ConfigUtil {
 	public  static String API_KEY;// API密钥
 	public  static String SIGN_TYPE;// 签名加密方式
 	public  static String CERT_PATH ;//微信支付证书
+	public  static String notifyurl ;//通知地址
+	public  static String IP="192.168.0.0" ;//通知地址
 
 	public static synchronized void init(String filePath) {
 		if (configs != null) {
@@ -44,6 +46,7 @@ public class ConfigUtil {
 		API_KEY = configs.getString("API_KEY");
 		SIGN_TYPE = configs.getString("SIGN_TYPE");
 		CERT_PATH = configs.getString("CERT_PATH");
+		notifyurl = configs.getString("notifyurl");
 	}
 
 	/**

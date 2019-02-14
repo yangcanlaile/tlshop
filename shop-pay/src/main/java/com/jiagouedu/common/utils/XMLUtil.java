@@ -16,7 +16,6 @@ import java.util.Map;
 /**
  * XML解析
  * 创建者 悟空老师
- * 创建时间	2018年7月31日
  *
  */
 public class XMLUtil {

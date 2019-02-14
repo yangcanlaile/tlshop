@@ -14,10 +14,12 @@ import com.jiagouedu.IAliPayService;
 import com.jiagouedu.common.constants.Constants;
 import com.jiagouedu.common.constants.PayAlipayType;
 import com.jiagouedu.common.utils.AliPayConfig;
+import com.jiagouedu.common.utils.ConfigUtilZfb;
 import com.jiagouedu.model.Product;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -26,16 +28,14 @@ import java.util.Map;
 public class AliPayServiceImpl implements IAliPayService {
    private static final Logger logger = LoggerFactory.getLogger(AliPayServiceImpl.class);
    //spring_boot实现方式 自行获取  回调参数notify_url
-   //@Value("${alipay.notify.url}")
-   private String notify_url;
-   private String returnUrl;
+
 
    @Override
    public String aliPayPc(Product product) {
       logger.info("支付宝下单");
       AlipayTradePagePayRequest alipayRequest = new AlipayTradePagePayRequest();
-      alipayRequest.setReturnUrl(returnUrl);//前台通知
-      alipayRequest.setNotifyUrl(notify_url);//后台回调
+      alipayRequest.setReturnUrl(ConfigUtilZfb.returnUrl);//前台通知
+      alipayRequest.setNotifyUrl(ConfigUtilZfb.notifyurl);//后台回调
       JSONObject bizContent = new JSONObject();
       bizContent.put("out_trade_no", product.getOutTradeNo());
       bizContent.put("total_amount", product.getTotalFee());//订单金额:元

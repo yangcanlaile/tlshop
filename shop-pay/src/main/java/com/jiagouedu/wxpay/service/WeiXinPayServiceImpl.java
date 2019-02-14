@@ -31,7 +31,7 @@ import java.util.TreeMap;
 @Service(value = "weixinPayServiceImpl")
 public class WeiXinPayServiceImpl implements IWeiXinPayService{
    private static final Logger logger = LoggerFactory.getLogger(WeiXinPayServiceImpl.class);
-   private String notify_url="abc";
+
 
    public String weixinPay(Product product) {
       logger.info("订单号：{}生成微信支付码",product.getOutTradeNo());
@@ -50,8 +50,8 @@ public class WeiXinPayServiceImpl implements IWeiXinPayService{
          String totalFee = product.getTotalFee();
          totalFee =  CommonUtil.subZeroAndDot(totalFee);
          packageParams.put("total_fee", totalFee);// 总金额
-         packageParams.put("spbill_create_ip","192.168.0.31");// 发起人IP地址
-         packageParams.put("notify_url", notify_url);// 回调地址
+         packageParams.put("spbill_create_ip",ConfigUtil.IP);// 发起人IP地址
+         packageParams.put("notify_url", ConfigUtil.notifyurl);// 回调地址
          packageParams.put("trade_type", trade_type);// 交易类型
          String sign = PayCommonUtil.createSign("UTF-8", packageParams, key);
          packageParams.put("sign", sign);// 签名

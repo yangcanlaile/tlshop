@@ -16,6 +16,7 @@ public class InitUtil {
 	@PostConstruct
 	public void init() {
 		ConfigUtil.init("wxinfo.properties");
+		ConfigUtilZfb.init("zfbinfo.properties");
 		SDKConfig.getConfig().loadPropertiesFromSrc();
 	}
 
