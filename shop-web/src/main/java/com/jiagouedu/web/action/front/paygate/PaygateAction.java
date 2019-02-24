@@ -33,7 +33,8 @@ public class PaygateAction {
     private OrderpayService orderpayService;
     @RequestMapping("pay")
     public String pay(String orderId, String orderPayId,  ModelMap modelMap) {
-        Order order = orderService.selectById(orderId);
+       // Order order = orderService.selectById(orderId);
+        Order order=orderService.selectByOrder(Long.parseLong(orderId));
 
         if(order == null) {
             throw new NullPointerException("根据订单号查询不到订单信息！");
