@@ -1,4 +1,8 @@
 import com.google.common.util.concurrent.AbstractIdleService;
+import com.jiagouedu.services.front.account.AccountService;
+import com.jiagouedu.services.front.account.bean.Account;
+import com.jiagouedu.services.front.order.bean.Order;
+import com.jiagouedu.services.front.order.impl.OrderServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -36,6 +40,9 @@ public class TradeBootstrap extends AbstractIdleService implements ServletContex
         LOGGER.info("===================shop-goods START ....==========================");
         context = new ClassPathXmlApplicationContext(new String[]{"spring/applicationContext.xml"});
         context.start();
+       AccountService accountService= (AccountService) context.getBean("membersService");
+       Account account = accountService.selectById("44");
+       System.out.println(account.getId());
         context.registerShutdownHook();
         LOGGER.info("shop-goods service started successfully");
 

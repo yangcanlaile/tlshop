@@ -37,27 +37,23 @@
 <#--<div> <input id="btnPay" type="button" class="btn btn-primary" value="确认支付"/></div>-->
     <div>
         <a href="${basepath}/pay/pcpay?orderId=${order.id!""}"><img src="${basepath}/resource/images/zfbzf.jpg" width="100" height="50"></a>
-        <a href="${basepath}/pay/wxpay?orderId=${order.id!""}"><img src="${basepath}/resource/images/wxzf.jpg" width="100" height="50"></a>
+        <img src="${basepath}/resource/images/wxzf.jpg" width="100" height="50" id="btnPay">
+        <div id="wxcode"><img/></div>
     </div>
-       <#-- <input id="btnPay" type="button" class="btn btn-primary" value="确认支付"/></div>-->
 </div>
 <script>
     $(function(){
         $("#btnPay").click(function(){
-            if(confirm("确认支付?")) {
                 $.ajax({
-                    dataType:"json",
-                    url:"${basepath}/paygate/dummyPay",
-                    type:"POST",
-                    data:{orderId:"${payInfo.WIDout_trade_no}"},
+                    url:"${basepath}/pay/wxpay?orderId=${order.id!""}",
+                    type:"GET",
                     success:function(data){
-                        window.location.href="${basepath}/order/paySuccess.html";
+                        $("#wxcode").children("img").attr("src",data);
                     },
                     error:function(data){
                         alert("支付失败");
                     }
                 });
-            }
         });
     })
 </script>
