@@ -84,6 +84,6 @@
         <property name="mapperLocations" value="classpath*:/config/**/*.xml" />
         <property name="dataSource" ref="shardingDataSource" />
     </bean>
-    <bean id="incrementKeyGenerator" class="com.jiagouedu.core.front.IncrementKeyGenerator"></bean>
+    <bean id="incrementKeyGenerator" class="com.jiagouedu.core.front.keygenerator.RedisServiceImpl"></bean>
 
 </beans>
