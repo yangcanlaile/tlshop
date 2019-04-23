@@ -15,5 +15,4 @@ logs/
 lib/
 *.iml
 .idea/
-*.launch
-*.springBeans
+
