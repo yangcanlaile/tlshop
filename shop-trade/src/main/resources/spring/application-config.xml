@@ -16,7 +16,7 @@
 	<!--<cache:annotation-driven/>-->
 	<bean id="jedisConnectionFactory"
 		  class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-		<property name="hostName" value="localhost"/>
+		<property name="hostName" value="192.168.4.5"/>
 		<property name="port" value="6379"/>
 		<!--<property name="password" value="${redis.password}"/>-->
 		<property name="poolConfig" ref="jedisPoolConfig"/>
